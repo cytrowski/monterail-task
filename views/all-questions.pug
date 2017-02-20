@@ -1,0 +1,83 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title Monterail task
+		link(rel="stylesheet" href="/css/style.min.css")
+
+	body
+		header
+			div.header-wrapper
+				h1.page-title Questions
+				button.btn.btn__add
+			form.header-wrapper(method="post")
+				input.input.input__search(placeholder="Search questions")
+				button.btn.btn__search(type="submit") Search
+					
+		main.container
+			div.wrapper
+				div.stats-item
+					span.stats-item--counter 3
+					span.stats-item--label related discussions
+				
+				div.stats-item
+					span.stats-item--label Last time discussed
+					span.stats-item--counter 6
+					span.stats-item--label days ago
+					
+				img.profile-photo(src="/images/face.png")
+				
+				div.photo-box
+					img.profile-photo(src="/images/face.png")
+				
+				div.photo-box.photo-box__striped
+					img.profile-photo(src="/images/face.png")
+				
+				img.profile-photo.profile-photo__resized(src="/images/face.png")
+				
+				div.main-activity
+					a.main-activity--person(href="#") Eva
+					span.main-activity--description is asking:
+				
+				a.title(href="#") Will insuline make my patient gain weight?
+				
+					
+				div.activity-wrapper
+					div.activity.activity__with-dot
+						div.photo-box
+							img.profile-photo(src="/images/face.png")
+						div.activity--name Commented
+			
+				div.activity-wrapper
+					div.activity.activity__answered.activity__with-dot
+						div.photo-box
+							img.profile-photo(src="/images/face.png")
+						div.activity--name Answered
+				
+				div.activity-wrapper
+					div.pseudo-activity.activity__with-dot
+						div.activity--counter.activities-counter 6
+						div.activity--more more<br>activites
+						
+				div
+					button.btn.btn__link.btn__load-more load more questions
+					
+				div.question
+					div.question--body
+						div.question--header
+							div.main-activity
+								a.main-activity--person(href="#") Eva
+								span.main-activity--description is asking:
+							a.title Where is the love?
+					div.question--stats
+						div.stats-item
+							span.stats-item--counter 1
+							span.stats-item--label related discussion
+						
+						div.stats-item
+							span.stats-item--counter 6
+							span.stats-item--label peers involved
+						
+						div.stats-item
+							span.stats-item--counter 3
+							span.stats-item--label conversations

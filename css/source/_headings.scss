@@ -1,0 +1,11 @@
+.title {
+	color: #2375c0;
+	display: table;
+	font-family: $font-family--italic;
+	font-size: 2rem;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

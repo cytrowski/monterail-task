@@ -1,0 +1,21 @@
+.profile-photo {
+	border-radius: 50%;
+	display: inline-block;
+	height: 54px;
+	vertical-align: middle;
+	width: 54px;
+
+	&__resized {
+		height: 78px;
+		width: 78px;
+	}
+}
+
+.photo-box {
+	display: inline-block;
+	line-height: 96px;
+
+	&__striped {
+		background-color: #ccc;
+	}
+}

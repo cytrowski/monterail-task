@@ -1,0 +1,21 @@
+header {
+	background-color: #fff;
+	padding: 15px 0;
+}
+
+.header-wrapper {
+	@include container();
+
+	padding: 0 10px;
+	width: 740px;
+}
+
+.page-title {
+	display: inline-block;
+	font-family: $font-family--bold;
+	font-size: 3rem;
+	font-weight: normal;
+	margin: 0;
+	text-transform: uppercase;
+	vertical-align: middle;
+}

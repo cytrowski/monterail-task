@@ -1,0 +1,53 @@
+.btn {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+
+	&:active {
+		transform: translateY(-1px);
+	}
+}
+
+.btn__search {
+	@include search-element();
+
+	background-color: #fff;
+	color: #b0b2b3;
+	font-family: $font-family--bold;
+	margin-left: 20px;
+	text-transform: uppercase;
+	width: 1/4 * 720px - 20px;
+
+	@include media-below(740px) {
+		margin-left: 0;
+		width: 25%;
+	}
+}
+
+.btn__add {
+	@include sprite(0px, 0px);
+
+	background-color: $control-color;
+	border: none;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 20px;
+	height: 2.6rem;
+	vertical-align: middle;
+	width: 2.6rem;
+}
+
+.btn__link:hover {
+	text-decoration: underline;
+}
+
+.btn__load-more {
+	color: #db0f3c;
+	border: none;
+	font-family: $font-family--bold;
+	font-size: 1.6rem;
+	padding: 0;
+}

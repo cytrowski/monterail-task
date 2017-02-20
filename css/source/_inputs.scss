@@ -1,0 +1,19 @@
+.input {
+	@include search-element();
+}
+
+.input__search {
+	background-color: #fbfbfb;
+	border-color: #f1f1f1;
+	outline: none;
+	width: 3/4 * 720px;
+
+	&:focus {
+		border-color: #0266b9;
+		color: #0266b9;
+	}
+
+	@include media-below(740px) {
+		width: 75%;
+	}
+}

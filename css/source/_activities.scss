@@ -1,0 +1,97 @@
+.main-activity {
+	&--person,
+	&--description {
+		display: inline-block;
+		vertical-align: baseline;
+	}
+
+	&--person {
+		color: #2375c0;
+		font-family: $font-family--bold;
+		font-size: 1.6rem;
+	}
+
+	&--description {
+		color: grey;
+		font-family: $font-family--bold;
+		font-size: 1.1rem;
+		margin-left: .8rem;
+		text-transform: uppercase;
+	}
+}
+
+.activity-wrapper {
+	display: inline-block;
+	vertical-align: bottom;
+	width: percentage(1/6);
+}
+
+.pseudo-activity,
+.activity {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	justify-content: space-between;
+	position: relative;
+	text-align: center;
+}
+
+.activity {
+	background-color: #eee;
+}
+
+.activity--counter {
+	line-height: 96px;
+}
+
+.activity--name,
+.activity--more {
+	padding: 5px 0;
+}
+
+.activity--name {
+	color: #a7a9ac;
+	font-size: 1.4rem;
+	line-height: 3rem;
+	text-transform: uppercase;
+
+	&:before {
+		border-bottom: 1px solid #a7a9ac;
+		content: "";
+		display: block;
+		height: 1px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+.activity--more {
+	font-family: $font-family--italic;
+	font-size: 1.6rem;
+	padding: 15px 0;
+}
+
+.activity__with-dot:after {
+	$size: 10px;
+	background-color: #a7a9ac;
+	border-radius: 50%;
+	bottom: - $size / 2;
+	content: "";
+	height: $size;
+	left: 50%;
+	margin-left: - $size / 2;
+	position: absolute;
+	width: $size;
+}
+
+.activity__answered {
+	.activity--name:before {
+		border-color: #000;
+	}
+
+	&.activity__with-dot:after {
+		background-color: #000;
+	}
+}

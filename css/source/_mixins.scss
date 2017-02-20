@@ -1,0 +1,50 @@
+// Containers and wrappers + classes
+@mixin container() {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+
+.container {
+	@include container();
+	width: 1080px;
+}
+
+.wrapper {
+	@include container();
+	width: 720px;
+}
+
+// Search input and button common styles
+@mixin search-element {
+	border: 1px solid;
+	display: inline-block;
+	font-family: inherit;
+	font-size: 1.6rem;
+	height: 36px;
+	line-height: 36px;
+	margin: 0;
+	padding: 0 10px;
+	vertical-align: middle;
+}
+
+// Sprite
+@mixin sprite($x-pos, $y-pos) {
+	background-image: url('/images/sprite.svg');
+	background-repeat: no-repeat;
+	background-size: 500px auto;
+	background-position: $x-pos $y-pos;
+}
+
+// Media queries
+@mixin media-above($size) {
+	@media only screen and (min-width: $size + 1px) {
+		@content;
+	}
+}
+
+@mixin media-below($size) {
+	@media only screen and (max-width: $size) {
+		@content;
+	}
+}

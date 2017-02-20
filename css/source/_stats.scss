@@ -1,0 +1,15 @@
+.activities-counter,
+.stats-item--counter {
+	font-size: 1.6rem;
+	font-family: $font-family--bold;
+	margin-right: .8rem;
+
+	&:not(:first-child) {
+		margin-left: .8rem;
+	}
+}
+
+.stats-item--label {
+	font-size: 1.6rem;
+	font-family: $font-family--italic;
+}
