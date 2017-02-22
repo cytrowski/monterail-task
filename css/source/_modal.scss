@@ -1,0 +1,44 @@
+.layer {
+	background-color: rgba(0,0,0,.7);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.modal {
+	$width: 850px;
+
+	background-color: #fff;
+	left: 50%;
+	margin-bottom: 20px;
+	margin-left: - $width / 2;
+	margin-top: 20px;
+	overflow: auto;
+	padding: 50px 0 30px 0;
+	position: absolute;
+	top: 0;
+	width: $width;
+	z-index: 11;
+
+	@include media-below($width) {
+		left: 0;
+		margin-left: 0;
+		width: 100%;
+	}
+}
+
+.close {
+	right: 10px;
+	position: absolute;
+	top: 10px;
+}
+
+.modal-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 620px;
+	padding: 0 10px;
+}

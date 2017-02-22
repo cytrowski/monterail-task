@@ -1,16 +1,32 @@
 header {
 	background-color: #fff;
-	padding: 15px 0;
+	box-shadow: 0 0 5px rgba(0,0,0,.05);
+	padding: 0 0 15px 0;
+	position: relative;
+	z-index: 1;
 }
 
-.header-wrapper {
+.header-row {
+	align-items: center;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-row {
 	@include container();
 
 	padding: 0 10px;
-	width: 740px;
+	width: 820px;
 }
 
-.page-title {
+.header-row__1st {
+	margin-bottom: 15px;
+	padding-top: 30px;
+}
+
+.header--title {
 	display: inline-block;
 	font-family: $font-family--bold;
 	font-size: 3rem;
@@ -18,4 +34,29 @@ header {
 	margin: 0;
 	text-transform: uppercase;
 	vertical-align: middle;
+}
+
+.header--nav {
+	flex-grow: 1;
+}
+
+.header--sorting,
+.header--category {
+	align-items: center;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+.header--sorting {
+	justify-content: flex-end;
+	margin-left: 20px;
+	width: 180px;
+}
+
+.sorting-text {
+	font-family: $font-family--italic;
+	font-size: 1.4rem;
+	margin-left: .8rem;
+	margin-right: .8rem;
 }

@@ -6,6 +6,14 @@ class BaseRouter {
 		app.all('/', (req, res) => {
 			res.render('all-questions');
 		});
+
+		app.all('/single', (req, res) => {
+			res.render('single-question');
+		});
+
+		app.all('/modal', (req, res) => {
+			res.render('modal');
+		});
 	}
 }
 
@@ -28,6 +36,10 @@ class ResourcesRouter {
 
 		app.all('/images/sprite.png', (req, res) => {
 			res.sendFile(__dirname + '/images/sprite.png');
+		});
+
+		app.all('/images/pattern.png', (req, res) => {
+			res.sendFile(__dirname + '/images/pattern.png');
 		});
 
 		app.all('/images/face.png', (req, res) => {

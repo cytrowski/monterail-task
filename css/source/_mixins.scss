@@ -7,12 +7,12 @@
 
 .container {
 	@include container();
-	width: 1080px;
+	width: 1200px;
 }
 
 .wrapper {
 	@include container();
-	width: 720px;
+	width: 800px;
 }
 
 // Search input and button common styles
@@ -30,7 +30,7 @@
 
 // Sprite
 @mixin sprite($x-pos, $y-pos) {
-	background-image: url('/images/sprite.svg');
+	background-image: url('/images/sprite.png');
 	background-repeat: no-repeat;
 	background-size: 500px auto;
 	background-position: $x-pos $y-pos;

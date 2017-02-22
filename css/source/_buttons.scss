@@ -1,7 +1,6 @@
 .btn {
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	appearance: none;
 	background-color: transparent;
 	cursor: pointer;
 	outline: none;
@@ -11,43 +10,92 @@
 	}
 }
 
+.btn__continue,
+.btn__answer,
 .btn__search {
 	@include search-element();
 
 	background-color: #fff;
+	border-color: #e5e5e5;
 	color: #b0b2b3;
 	font-family: $font-family--bold;
 	margin-left: 20px;
-	text-transform: uppercase;
-	width: 1/4 * 720px - 20px;
+	width: 180px;
+}
 
-	@include media-below(740px) {
+.btn__search {
+	width: 1/4 * 800px - 20px;
+
+	@include media-below(840px) {
 		margin-left: 0;
 		width: 25%;
 	}
 }
 
-.btn__add {
+.btn__search {
+	border-color: #a7a9ac;
+	color: #a7a9ac;
+}
+
+.btn__continue,
+.btn__answer {
+	color: #2d2c2e;
+	margin-left: 0;
+}
+
+.btn__add,
+.btn__nav {
 	@include sprite(0px, 0px);
 
 	background-color: $control-color;
 	border: none;
 	border-radius: 50%;
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 45px;
 	height: 2.6rem;
 	vertical-align: middle;
 	width: 2.6rem;
+}
+
+.btn__nav {
+	@include sprite(0, -26px);
+	margin-left: 0;
+}
+
+.btn__prev {
+	@include sprite(0, -26px);
+}
+
+.btn__next {
+	@include sprite(-26px, -52px);
 }
 
 .btn__link:hover {
 	text-decoration: underline;
 }
 
-.btn__load-more {
+.btn__load {
 	color: #db0f3c;
 	border: none;
 	font-family: $font-family--bold;
 	font-size: 1.6rem;
 	padding: 0;
+}
+
+.btn__upvote,
+.btn__downvote {
+	border-style: solid;
+	display: block;
+	padding: 0;
+}
+
+.btn__upvote {
+	border-width: 0 5px 10px 5px;
+	border-color: transparent transparent #0266B9 transparent;
+	margin-bottom: 10px;
+}
+
+.btn__downvote {
+	border-width: 10px 5px 0 5px;
+	border-color: #0266B9 transparent transparent transparent;
 }

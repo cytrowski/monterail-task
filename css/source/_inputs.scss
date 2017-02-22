@@ -1,19 +1,69 @@
+.search-form {
+	margin-top: 20px;
+}
+
 .input {
 	@include search-element();
 }
 
 .input__search {
 	background-color: #fbfbfb;
-	border-color: #f1f1f1;
+	border-color: #eee;
 	outline: none;
-	width: 3/4 * 720px;
+	width: 3/4 * 800px;
 
 	&:focus {
 		border-color: #0266b9;
 		color: #0266b9;
 	}
 
-	@include media-below(740px) {
+	@include media-below(840px) {
 		width: 75%;
 	}
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.radio {
+	align-items: center;
+	cursor: pointer;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	font-family: $font-family--bold;
+	font-size: 1.4rem;
+	margin-left: 1.6rem;
+	position: relative;
+}
+
+.radio__circle {
+	&:before {
+		border: 1px solid #a9aaad;
+		border-radius: 50%;
+		content: "";
+		display: inline-block;
+		height: 16px;
+		margin-right: .8rem;
+		width: 16px;
+	}
+}
+
+input:checked + .radio__circle:before {
+	@include sprite(-53px, -27px);
+}
+
+.radio__link {
+	color: #0266b3;
+	margin-left: 0;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+input:checked + .radio__link {
+	color: #a7a9ac;
+	text-decoration: underline;
 }
