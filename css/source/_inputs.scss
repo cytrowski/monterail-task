@@ -1,7 +1,3 @@
-.search-form {
-	margin-top: 20px;
-}
-
 .input {
 	@include search-element();
 }
@@ -10,11 +6,14 @@
 	background-color: #fbfbfb;
 	border-color: #eee;
 	outline: none;
-	width: 3/4 * 800px;
 
 	&:focus {
 		border-color: #0266b9;
 		color: #0266b9;
+	}
+
+	@include media-above(840px) {
+		width: 3/4 * 800px;
 	}
 
 	@include media-below(840px) {

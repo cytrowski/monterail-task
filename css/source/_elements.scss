@@ -1,3 +1,12 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+a:not(:hover) {
+	text-decoration: none;
+}
+
+//
 .stat--label,
 .action--type,
 .modal--header,
@@ -73,14 +82,6 @@
 .counter--label {
 	font-family: $font-family--italic;
 }
-
-// .entry-stat .counter--value {
-// 	margin-right: .8rem;
-// }
-//
-// .profile-stat .stat--value {
-// 	margin-left: .8rem;
-// }
 
 .action--time:before {
 	content: "\00b7";
@@ -200,152 +201,12 @@
 	width: 50px;
 }
 
-.close {
-	@include sprite(-68px, -26px);
-
-	cursor: pointer;
-	display: inline-block;
-	height: 16px;
-	width: 16px;
-}
-
 // Horizontal line
 .hline {
 	border: solid #a9acae;
 	border-width: 0 0 1px 0;
 	margin: 20px 0;
 }
-
-// Question
-// .comment,
-// .answer,
-// .question {
-// 	background-color: #fff;
-// 	box-shadow: 2px -2px 8px rgba(0,0,0,.1);
-// 	position: relative;
-// }
-//
-// .last {
-// 	.comment--main,
-// 	.answer--main {
-// 		padding-bottom: 40px;
-// 	}
-// }
-//
-// .question--main {
-// 	display: inline-block;
-// 	width: 75%;
-// }
-//
-// .question--action,
-// .question--head {
-// 	background-color: #dff3fd;
-// }
-//
-// .question--head {
-// 	align-items: center;
-// 	display: -webkit-flex;
-// 	display: -ms-flex;
-// 	display: flex;
-// }
-//
-// .answer--main,
-// .question--details {
-// 	display: inline-block;
-// 	vertical-align: middle;
-// }
-//
-// .question--details {
-// 	padding: 0 20px;
-// }
-//
-// .comment--content,
-// .question--content,
-// .answer--content {
-// 	margin: 0;
-// }
-//
-// .question--content {
-// 	border-left: 90px solid #dff3fd;
-// 	padding: 20px 25px 40px 25px;
-// }
-//
-// .question--aside {
-// 	display: inline-block;
-// 	vertical-align: top;
-// 	text-align: center;
-// 	width: 25%;
-// }
-//
-// .question--action {
-// 	line-height: 90px;
-// 	min-height: 90px;
-// }
-//
-// .question--voting {
-// 	padding-top: 25px;
-// }
-//
-// .entry--button {
-// 	position: relative;
-// 	text-align: center;
-// 	transform: translateY(-50%);
-// 	width: 100%;
-// 	z-index: 2;
-// }
-
-// Voting buttons wrapper
-// .voting-buttons {
-// 	display: inline-block;
-// 	margin-left: 2rem;
-// 	vertical-align: top;
-// }
-
-// Answer
-// .answer {
-// 	z-index: 1;
-// }
-//
-// .answer-wrapper {
-// 	position: relative;
-// }
-//
-// .comment--details,
-// .answer--details {
-// 	padding-left: 20px;
-// 	padding-top: 20px;
-// }
-//
-// .comment--content,
-// .answer--content {
-// 	margin: 0;
-// 	padding: 20px;
-// }
-//
-// .comment--main,
-// .comment--voting,
-// .answer--main,
-// .answer--voting {
-// 	display: inline-block;
-// 	vertical-align: middle;
-// }
-//
-// .comment--main,
-// .answer--main {
-// 	border-left: 1px solid #e5e5e5;
-// 	width: calc(100% - 290px);
-// }
-//
-// .comment {
-// 	border-top: 1px solid #e5e5e5;
-// 	margin-left: 90px;
-// }
-//
-// .answer--voting,
-// .comment--voting {
-// 	text-align: center;
-// 	width: 200px;
-// }
 
 // Item
 .item {
@@ -632,6 +493,9 @@
 }
 
 // Statistic
+.stat {
+	color: #404b51;
+}
 .stat--counter {
 	@extend .counter--value;
 
@@ -689,4 +553,13 @@
 
 .stats-list__hottest {
 	margin-top: 20px;
+}
+
+// Content <p>
+.content {
+	color: #6b6d71;
+	font-family: 'Arial', sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	margin: 0;
 }

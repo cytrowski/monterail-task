@@ -24,7 +24,9 @@
 }
 
 .btn__search {
-	width: 1/4 * 800px - 20px;
+	@include media-above(840px) {
+		width: 1/4 * 800px - 20px;
+	}
 
 	@include media-below(840px) {
 		margin-left: 0;

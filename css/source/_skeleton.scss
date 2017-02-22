@@ -5,20 +5,13 @@ html {
 
 body {
 	background-color: $background-color;
+	color: #2d2c2e;
 	font-family: $font-family;
 	margin: 0;
 	padding: 0 0 60px 0;
 }
 
-*, *:after, *:before {
-	box-sizing: border-box;
-}
-
 main {
 	background-color: #fbfbfb;
 	padding-bottom: 40px;
-}
-
-a:not(:hover) {
-	text-decoration: none;
 }

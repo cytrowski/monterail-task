@@ -60,3 +60,24 @@ header {
 	margin-left: .8rem;
 	margin-right: .8rem;
 }
+
+.search-form {
+	margin-top: 20px;
+}
+
+
+.go-back-link {
+	@include sprite(-52px, -42px);
+
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	height: 21px;
+	transform: scale(2) translateX(-70px);
+	vertical-align: middle;
+	width: 21px;
+
+	&:active {
+		transform: scale(2) translateX(-70px) translateY(-1px);
+	}
+}

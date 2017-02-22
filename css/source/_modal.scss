@@ -31,9 +31,15 @@
 }
 
 .close {
+	@include sprite(-68px, -26px);
+
+	cursor: pointer;
+	display: inline-block;
+	height: 16px;
 	right: 10px;
 	position: absolute;
 	top: 10px;
+	width: 16px;
 }
 
 .modal-wrapper {
