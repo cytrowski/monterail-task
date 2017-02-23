@@ -65,6 +65,10 @@ header {
 		justify-content: center;
 		margin-top: 15px;
 	}
+
+	@include media-below(425px) {
+		display: block;
+	}
 }
 
 .header--sorting,
@@ -72,15 +76,31 @@ header {
 	@extend .header--form-fields;
 
 	align-items: center;
+
+	@include media-below(425px) {
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		justify-content: center;
+	}
 }
 
 .header--sorting {
-	justify-content: flex-end;
-	margin-left: 20px;
-	width: 180px;
+	@include media-below(800px) {
+		width: 180px;
+	}
 
 	@include media-below(800px) {
 		width: auto;
+	}
+
+	@include media-above(425px) {
+		justify-content: flex-end;
+		margin-left: 20px;
+	}
+
+	@include media-below(425px) {
+		margin-left: 0;
 	}
 }
 
