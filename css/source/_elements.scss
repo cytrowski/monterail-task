@@ -347,6 +347,10 @@ a:not(:hover) {
 .item--header--text {
 	padding-left: 20px;
 	width: calc(100% - 90px);
+
+	@include media-below(600px) {
+		padding-left: 0;
+	}
 }
 
 .item--body__extended,
@@ -360,6 +364,10 @@ a:not(:hover) {
 
 .item--body {
 	width: calc(100% - 200px);
+
+	@include media-below(600px) {
+		padding-top: 1px;
+	}
 }
 
 .item--body__extended {
@@ -382,10 +390,46 @@ a:not(:hover) {
 
 .item--activity {
 	background-color: #eee;
+
+	@include media-below(800px) {
+		&:nth-of-type(6) {
+			display: none;
+		}
+	}
+
+	@include media-below(700px) {
+		&:nth-of-type(5) {
+			display: none;
+		}
+	}
+
+	@include media-below(600px) {
+		margin-left: 1px;
+	}
+
+	@include media-below(470px) {
+		&:nth-of-type(4) {
+			display: none;
+		}
+	}
+
+	@include media-below(380px) {
+		&:nth-of-type(3) {
+			display: none;
+		}
+	}
 }
 
 .item--activities-summary {
-	width: 100px;
+	@include media-above(600px) {
+		width: 100px;
+	}
+
+	@include media-below(600px) {
+		background-color: #eee;
+		margin-left: 0;
+		width: 90px;
+	}
 }
 
 .item--activity--name {
@@ -465,6 +509,10 @@ a:not(:hover) {
 	height: 190px;
 	min-width: 90px;
 	width: 90px;
+
+	@include media-below(600px) {
+		display: none;
+	}
 }
 
 .item--stats {
@@ -474,6 +522,10 @@ a:not(:hover) {
 	margin-left: 0;
 	padding-left: 50px;
 	width: 200px;
+
+	@include media-below(600px) {
+		justify-content: space-around;
+	}
 }
 
 .item--action {
