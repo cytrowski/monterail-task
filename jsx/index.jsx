@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import { Router, Route, browserHistory } from 'react-router'
 
-//import { Provider } from 'react-redux'
+import HeaderWithSearch from './components/HeaderWithSearch.jsx';
+import Header from './components/Header.jsx';
 
 const app = document.getElementById('app');
 
 ReactDOM.render(
-	<div>Hello world!</div>,
+	<div>
+		<HeaderWithSearch />
+		<Header />
+	</div>,
 	app
 );
