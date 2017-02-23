@@ -24,6 +24,11 @@ class ResourcesRouter {
 			res.sendFile(__dirname + '/css/style.min.css');
 		});
 
+		// JS
+		app.all('/js/script.min.js', (req, res) => {
+			res.sendFile(__dirname + '/js/script.min.js');
+		});
+
 		// Web fonts
 		app.all('/fonts/Agfa-Rotis(-bold|-italic)?.woff', (req, res) => {
 			res.sendFile(__dirname + '/' + req.url);
@@ -54,4 +59,6 @@ module.exports = (app) => {
 
 	new BaseRouter(app);
 	new ResourcesRouter(app);
+
+	return true;
 };
