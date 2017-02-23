@@ -2,7 +2,7 @@ extends partials/template.pug
 
 block header
 	header.single-question-page
-		div.header-row.header-row__1st
+		div.header-row.header-row__top
 			div.header--nav
 				a.go-back-link(href="#")
 				h1.header--title Questions
@@ -33,7 +33,7 @@ block main
 
 			div.item--cell__second
 				div.item--action
-					a.item--action--link(href="#") unfollow
+					a.item--action--link.bounce(href="#") unfollow
 
 				div.item--voting
 					div.stat.stat__item

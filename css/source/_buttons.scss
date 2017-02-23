@@ -4,7 +4,12 @@
 	background-color: transparent;
 	cursor: pointer;
 	outline: none;
+}
 
+.bounce,
+.btn {
+	display: inline-block;
+	
 	&:active {
 		transform: translateY(-1px);
 	}

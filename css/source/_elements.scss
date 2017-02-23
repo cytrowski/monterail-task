@@ -89,6 +89,53 @@ a:not(:hover) {
 	margin: 0 .8rem;
 }
 
+// Stats list
+.modal--nav,
+.square-stats,
+.stats-list {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.stats-list__profile {
+	margin: 10px 0;
+
+	@include media-below(560px) {
+		display: block;
+		text-align: center;
+
+		.stat:not(:last-of-type) {
+			margin-bottom: 10px;
+		}
+
+		.stat--label,
+		.stat--value {
+			display: block;
+		}
+
+		.stat--label {
+			margin-right: 0;
+		}
+	}
+}
+
+.stats-list__hottest {
+	margin-top: 20px;
+
+	@include media-below(560px) {
+		display: block;
+
+		.stat {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+}
+
 // Photo
 .photo {
 	border-radius: 50%;
@@ -155,13 +202,48 @@ a:not(:hover) {
 }
 
 // Square stats
+.square-stats {
+	@extend .stats-list;
+
+	@include media-below(560px) {
+		display: block;
+	}
+}
+
 .square-stats-wrapper {
-	width: 450px;
 	margin: 50px auto;
 	max-width: 100%;
+
+	@include media-above(560px) {
+		width: 500px;
+	}
+
+	@include media-below(560px) {
+		width: 250px;
+	}
+}
+
+.square-stats--row {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-around;
+
+	@include media-above(560px) {
+		width: 50%;
+	}
+
+	@include media-below(560px) {
+		width: 100%;
+
+		&:nth-of-type(2) {
+			margin-top: 20px;
+		}
+	}
 }
 
 .square-stat {
+	display: inline-block;
 	height: 80px;
 	line-height: 40px;
 	position: relative;
@@ -533,26 +615,6 @@ a:not(:hover) {
 
 	font-size: 2.4rem;
 	margin-top: 10px;
-}
-
-// Stats list
-.modal--nav,
-.square-stats,
-.stats-list {
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	justify-content: space-between;
-	list-style-type: none;
-	padding-left: 0;
-}
-
-.stats-list__profile {
-	margin: 10px 0;
-}
-
-.stats-list__hottest {
-	margin-top: 20px;
 }
 
 // Content <p>

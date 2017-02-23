@@ -1,9 +1,11 @@
 extends partials/template.pug
 
+block header
+
 block main
 	div.layer
 	div.modal
-		span.close
+		span.close.bounce
 
 		div.modal-wrapper
 			div.modal--profile.center-box
@@ -33,18 +35,20 @@ block main
 
 			div.square-stats-wrapper
 				ul.square-stats
-					li.square-stat.square-stat__1st
-						span.stat--counter.square-stat--value 46
-						span.stat--text peers
-					li.square-stat.square-stat__2nd
-						span.stat--counter.square-stat--value 29
-						span.stat--text discussions
-					li.square-stat.square-stat__3rd
-						span.stat--counter.square-stat--value 19
-						span.stat--text findings
-					li.square-stat.square-stat__4th
-						span.stat--counter.square-stat--value 10
-						span.stat--text questions
+					li.square-stats--row
+						span.square-stat.square-stat__1st
+							span.stat--counter.square-stat--value 46
+							span.stat--text peers
+						span.square-stat.square-stat__2nd
+							span.stat--counter.square-stat--value 29
+							span.stat--text discussions
+					li.square-stats--row
+						span.square-stat.square-stat__3rd
+							span.stat--counter.square-stat--value 19
+							span.stat--text findings
+						span.square-stat.square-stat__4th
+							span.stat--counter.square-stat--value 10
+							span.stat--text questions
 
 			h4.modal--header Who joined the platform the same period
 
