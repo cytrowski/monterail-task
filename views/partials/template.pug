@@ -13,21 +13,22 @@ html
 					div.header--nav
 						h1.header--title Questions
 						button.btn.btn__add
-					div.header--category
-						input(type="radio" id="shelf" name="category")
-						label.radio.radio__circle(for="shelf")
-							span My shelf
+					div.header--form-fields
+						div.header--category
+							input(type="radio" id="shelf" name="category")
+							label.radio.radio__circle(for="shelf")
+								span My shelf
 
-						input(type="radio" id="all" name="category")
-						label.radio.radio__circle(for="all")
-							span All questions
-					div.header--sorting
-						span.sorting-text Sort by:
-						input(type="radio" id="recent" name="sort-by" checked)
-						label.radio.radio__link(for="recent") recent
-						span.sorting-text or
-						input(type="radio" id="hot" name="sort-by")
-						label.radio.radio__link(for="hot") hot
+							input(type="radio" id="all" name="category")
+							label.radio.radio__circle(for="all")
+								span All questions
+						div.header--sorting
+							span.sorting-text Sort by:
+							input(type="radio" id="recent" name="sort-by" checked)
+							label.radio.radio__link(for="recent") recent
+							span.sorting-text or
+							input(type="radio" id="hot" name="sort-by")
+							label.radio.radio__link(for="hot") hot
 
 				form.search-form.header-row(method="post")
 					input.input.input__search(placeholder="Search questions")

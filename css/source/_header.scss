@@ -12,6 +12,10 @@ header {
 	display: -ms-flex;
 	display: flex;
 	justify-content: space-between;
+
+	@include media-below(640px) {
+		display: block;
+	}
 }
 
 .header-row {
@@ -34,24 +38,50 @@ header {
 	margin: 0;
 	text-transform: uppercase;
 	vertical-align: middle;
+
+	@include media-below(640px) {
+		flex-grow: 1;
+	}
 }
 
 .header--nav {
-	flex-grow: 1;
-}
-
-.header--sorting,
-.header--category {
 	align-items: center;
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
+	flex-grow: 1;
+
+	@include media-below(640px) {
+		justify-content: space-between;
+	}
+}
+
+.header--form-fields {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+
+	@include media-below(640px) {
+		justify-content: center;
+		margin-top: 15px;
+	}
+}
+
+.header--sorting,
+.header--category {
+	@extend .header--form-fields;
+
+	align-items: center;
 }
 
 .header--sorting {
 	justify-content: flex-end;
 	margin-left: 20px;
 	width: 180px;
+
+	@include media-below(800px) {
+		width: auto;
+	}
 }
 
 .sorting-text {
@@ -65,19 +95,65 @@ header {
 	margin-top: 20px;
 }
 
+.header--last-comment {
+	@include media-below(640px) {
+		margin-top: 15px;
+		text-align: center;
+	}
+}
+
+.go-back {
+	@include media-above(1200px) {
+		transform: translateX(-170px);
+	}
+
+	@include media-below(1200px) {
+		transform: translateX(-70px);
+	}
+
+	@include media-above(1024px) {
+		padding: 0;
+		width: 0;
+	}
+
+	@include media-below(1024px) {
+		padding-left: 20px;
+		transform: none;
+		width: 110px;
+	}
+
+	@include media-below(768px) {
+		padding-left: 0;
+		text-align: center;
+		width: 90px;
+	}
+
+	@include media-below(640px) {
+		padding-left: 10px;
+		text-align: left;
+	}
+}
 
 .go-back-link {
-	@include sprite(-52px, -42px);
+	@include sprite(-83px, -36px);
 
 	border: none;
 	cursor: pointer;
 	display: inline-block;
-	height: 21px;
-	transform: scale(2) translateX(-70px);
 	vertical-align: middle;
-	width: 21px;
 
 	&:active {
-		transform: scale(2) translateX(-70px) translateY(-1px);
+		transform: translateY(-1px);
+	}
+
+	@include media-above(768px) {
+		height: 42px;
+		width: 42px;
+	}
+
+	@include media-below(768px) {
+		@include sprite(-53px, -42px);
+		height: 26px;
+		width: 26px;
 	}
 }
