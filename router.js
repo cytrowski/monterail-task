@@ -1,5 +1,7 @@
 'use strict';
 
+const fs = require('fs');
+
 class BaseRouter {
 	constructor(app) {
 		// Home route
@@ -53,12 +55,41 @@ class ResourcesRouter {
 	}
 }
 
+class APIRouter {
+	constructor(app) {
+		app.post('/api/get-questions', (req, res) => {
+			res.send(
+				{
+					"id":1,
+					"date": new Date(),
+					"author":{
+						"id":1,
+						"name":"Louis"
+					},
+					"stats":{
+						"peers":10,
+						"discussions":39,
+						"conversations":2
+					},
+					"votes":-5,
+					"action":{
+						"type":
+						"found",
+						"description":null
+					}
+				}
+			);
+		});
+	}
+}
+
 module.exports = (app) => {
 	app.set('view engine', 'pug');
 	app.set('views dir', __dirname + '/views');
 
 	new BaseRouter(app);
 	new ResourcesRouter(app);
+	new APIRouter(app);
 
 	return true;
 };
