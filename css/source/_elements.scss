@@ -143,6 +143,10 @@ a:not(:hover) {
 	height: 50px;
 	vertical-align: middle;
 	width: 50px;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .photo__big {
@@ -188,6 +192,11 @@ a:not(:hover) {
 
 .card--name {
 	@extend .user--name;
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
 }
 
 // Modal hottest discussion
@@ -752,6 +761,12 @@ a:not(:hover) {
 	padding: 40px 20px;
 }
 
+.no-more-items {
+	@extend .btn__load;
+
+	color: #a7a9ac;
+}
+
 // Action bar
 .action {
 	margin-bottom: 5px;
@@ -759,6 +774,11 @@ a:not(:hover) {
 
 .action--name {
 	@extend .user--name;
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
 }
 
 // Statistic
