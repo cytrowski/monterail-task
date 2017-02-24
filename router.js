@@ -4,15 +4,15 @@ class BaseRouter {
 	constructor(app) {
 		// Home route
 		app.all('/', (req, res) => {
-			res.render('all-questions');
+			res.render('index');
 		});
 
 		app.all('/single', (req, res) => {
-			res.render('single-question');
+			res.render('index');
 		});
 
 		app.all('/modal', (req, res) => {
-			res.render('modal');
+			res.render('index');
 		});
 	}
 }

@@ -1,22 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router';
 
 export default class Header extends React.Component {
 	render() {
 		return (
-			<header class="single-question-page">
-			   <div class="header-row header-row__top">
-			      <div class="header--nav">
-			         <div class="go-back">
-			            <a class="go-back-link" href="/"></a>
+			<header className="single-question-page">
+			   <div className="header-row header-row__top">
+			      <div className="header--nav">
+			         <div className="go-back">
+			            <Link className="go-back-link" to="/"></Link>
 			         </div>
-			         <h1 class="header--title">Questions</h1>
-			         <button class="btn btn__add"></button>
+			         <h1 className="header--title">Questions</h1>
+			         <button className="btn btn__add"></button>
 			      </div>
 
-				   <div class="header--last-comment stat stat__item">
-						<span class="stat--text">Last time discussed</span>
-						<span class="stat--counter">12</span>
-						<span class="stat--text">days ago</span>
+				   <div className="header--last-comment stat stat__item">
+						<span className="stat--text">Last time discussed</span>
+						<span className="stat--counter">12</span>
+						<span className="stat--text">days ago</span>
 					</div>
 			   </div>
 			</header>

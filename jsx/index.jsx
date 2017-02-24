@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router'
 
-import HeaderWithSearch from './components/HeaderWithSearch.jsx';
-import Header from './components/Header.jsx';
+import AllQuestions from './views/AllQuestions.jsx';
+import SingleQuestion from './views/SingleQuestion.jsx';
 
-const app = document.getElementById('app');
+let app;
+
+app = document.getElementById('app');
 
 ReactDOM.render(
-	<div>
-		<HeaderWithSearch />
-		<Header />
-	</div>,
+	<Router history={browserHistory}>
+		<Route path="/" component={AllQuestions} />
+		<Route path="/single" component={SingleQuestion} />
+	</Router>,
 	app
 );
