@@ -4,7 +4,7 @@ const debug = process.env.NODE_ENV !== "production";
 module.exports = {
 	context: __dirname,
 	devtool: debug ? "inline-sourcemap" : null,
-	entry: __dirname + "/jsx/index.jsx",
+	entry: __dirname + "/react-build/index.jsx",
 	module: {
 		loaders: [
 			{
