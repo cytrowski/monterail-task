@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import HeaderWithSearch from '../components/HeaderWithSearch.jsx';
 import Header from '../components/Header.jsx';
@@ -13,25 +14,27 @@ export default class AllQuestions extends React.Component {
 		this.state = {
 			questions: []
 		};
+	}
 
-		this.lastKey = 5;
+	componentWillMount() {
+		axios({
+			method: 'POST',
+			url: '/api/get-questions',
+			headers: {
+				'X-Requested-With': 'XMLHttpRequest'
+			},
+			data: {}
+		}).then((response) => {
+			let data = response.data;
 
-		for (let i = 1; i <= 5; i++) {
-			this.state.questions.push(<Question key={i} />);
-		}
+			this.setState({
+				questions: [<Question key={data.id} data={data} />]
+			})
+		});
 	}
 
 	loadMore() {
-		let newQuestions = this.state.questions;
-
-		for (let i = 1; i <= 5; i++) {
-			newQuestions.push(<Question key={i + this.lastKey} />);
-			this.lastKey++;
-		}
-
-		this.setState({
-			questions: newQuestions,
-		});
+		//TODO
 	}
 
 	render() {
