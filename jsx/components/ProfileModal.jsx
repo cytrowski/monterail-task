@@ -1,50 +1,67 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { showProfile, hideProfile } from '../redux/actions/layout';
+
+import ModalHeader from './subcomponents/ModalHeader.jsx';
+import UserCard from './subcomponents/UserCard.jsx';
+import Photo from './subcomponents/Photo.jsx';
+
+@connect(store => {
+	return {
+		profile: store.layout.profile,
+		showProfile: store.layout.showProfile,
+	};
+})
 export default class ProfileModal extends React.Component {
-	constructor() {
-		super();
-
-		this.state = {
-			show: false,
-		};
+	showProfile(profileId) {
+		this.props.dispatch(showProfile(profileId));
 	}
 
 	closeModal() {
-		this.setState({
-			show: false,
-		});
+		this.props.dispatch(hideProfile());
 	}
 
 	render() {
-		if (!this.state.show) {
+		let profile, joinedCards;
+
+		if (!this.props.showProfile || this.props.profile === null) {
 			return null;
 		}
+
+		profile = this.props.profile;
+		joinedCards = [];
+
+		profile.whoJoined.forEach(user => {
+			joinedCards.push(<UserCard key={user.id} data={user}
+				onClick={this.showProfile.bind(this, user.id)} />);
+		});
 
 		return (
 			<div>
 				<div className="layer" onClick={this.closeModal.bind(this)}></div>
-				<div className="modal">
+				<div className="modal" style={{top:window.scrollY}}>
 					<span className="close bounce" onClick={this.closeModal.bind(this)}></span>
 
 				   <div className="modal-wrapper">
 				      <div className="modal--profile center-box">
-							<img className="photo__big" src="/images/face.png" />
-				         <div className="profile-name">Dr. Halima</div>
+							<Photo isBig={true} filename={profile.photo} />
+				         <div className="profile-name">{profile.name}</div>
 				      </div>
 
 					   <ul className="stats-list stats-list__profile">
 				         <li className="stat">
 								<span className="stat--label">Member for</span>
-								<span className="stat--value">5 months</span>
+								<span className="stat--value">{profile.memberFor}</span>
 							</li>
 				         <li className="stat">
 								<span className="stat--label">Last seen</span>
-								<span className="stat--value">Sunday afternoon</span>
+								<span className="stat--value">{profile.lastSeen}</span>
 							</li>
 				         <li className="stat">
 								<span className="stat--label">Activity level</span>
 								<span className="stat--value">
-									<i className="badge"></i>
+									<i className="badge" data-level={profile.activityLevel}></i>
 								</span>
 							</li>
 				      </ul>
@@ -57,83 +74,66 @@ export default class ProfileModal extends React.Component {
 				         <button className="btn btn__nav btn__next"></button>
 				      </div>
 
-						<h4 className="modal--header">That's where we have been these 5 month ago</h4>
+						<ModalHeader>That's where we have been these {profile.memberFor} ago</ModalHeader>
 
 					   <div className="square-stats-wrapper">
 				         <ul className="square-stats">
 				            <li className="square-stats--row">
 									<span className="square-stat square-stat__1st">
-										<span className="stat--counter square-stat--value">46</span>
+										<span className="stat--counter square-stat--value">{profile.stats.peers}</span>
 										<span className="stat--text">peers</span>
 									</span>
 									<span className="square-stat square-stat__2nd">
-										<span className="stat--counter square-stat--value">29</span>
+										<span className="stat--counter square-stat--value">{profile.stats.discussions}</span>
 				               	<span className="stat--text">discussions</span>
 									</span>
 				            </li>
 				            <li className="square-stats--row">
 									<span className="square-stat square-stat__3rd">
-										<span className="stat--counter square-stat--value">19</span>
+										<span className="stat--counter square-stat--value">{profile.stats.findings}</span>
 										<span className="stat--text">findings</span>
 									</span>
 									<span className="square-stat square-stat__4th">
-										<span className="stat--counter square-stat--value">10</span>
+										<span className="stat--counter square-stat--value">{profile.stats.questions}</span>
 				               	<span className="stat--text">questions</span>
 									</span>
 				            </li>
 				         </ul>
 				      </div>
 
-				      <h4 className="modal--header">Who joined the platform the same period</h4>
+				      <ModalHeader>Who joined the platform the same period</ModalHeader>
 
 						<div className="center-box">
-				         <div className="card">
-				            <div className="card--photo">
-									<img className="photo" src="/images/face.png" />
-								</div>
-								<a className="card--name" href="#">Joseph Aluoh</a>
-							</div>
-				         <div className="card">
-				            <div className="card--photo">
-									<img className="photo" src="/images/face.png" />
-								</div>
-								<a className="card--name" href="#">Joseph Aluoh</a>
-							</div>
-				         <div className="card">
-				            <div className="card--photo">
-									<img className="photo" src="/images/face.png" />
-								</div>
-								<a className="card--name" href="#">Joseph Aluoh</a>
-							</div>
+				         {joinedCards}
 				      </div>
 
-				      <h4 className="modal--header">The hottest discussion these days</h4>
+				      <ModalHeader>The hottest discussion these days</ModalHeader>
 					</div>
 
 				   <div className="modal--hottest-discussion">
 				      <div className="modal-wrapper">
-							<img className="photo" src="/images/face.png" />
+							<Photo filename="sarah.jpg" profileId="4" />
 				         <div className="action">
-								<a className="action--name" href="#">Andrew</a>
+								<a className="action--name">Sarah</a>
 								<span className="action--type">found The Guardian article</span>
 							</div>
-							<a className="title" href="#">Vegan diet to stop diabetes progress</a>
+							<span className="title">Cras in purus eu magna vulputate</span>
 
 						   <ul className="stats-list stats-list__hottest">
 				            <li className="stat stat__item">
-									<span className="stat--counter">6</span>
+									<span className="stat--counter">4</span>
 									<span className="stat--text">peers involved</span>
 								</li>
 				            <li className="stat stat__item">
-									<span className="stat--counter">3</span>
+									<span className="stat--counter">36</span>
 									<span className="stat--text">related discussions</span>
 								</li>
 				            <li className="stat stat__item">
-									<span className="stat--counter">3</span>
+									<span className="stat--counter">18</span>
 									<span className="stat--text">conversations</span>
 								</li>
 				            <li className="stat stat__item">
-									<span className="stat--counter">19</span>
+									<span className="stat--counter">90</span>
 									<span className="stat--text">upvotes</span>
 								</li>
 				         </ul>

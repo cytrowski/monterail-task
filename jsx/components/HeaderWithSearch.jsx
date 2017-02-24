@@ -1,5 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
+import { filterQuestions, resetSearchFilters, sortBy } from '../redux/actions/search';
+
+@connect(store => {
+	return {
+		search: store.search,
+	};
+})
 export default class HeaderWithSearch extends React.Component {
 	constructor() {
 		super();
@@ -9,6 +17,10 @@ export default class HeaderWithSearch extends React.Component {
 			searchIn: 'all',
 			sortBy: 'recent'
 		};
+	}
+
+	componentWillUnmount() {
+		this.props.dispatch(resetSearchFilters());
 	}
 
 	updateSearchText(e) {
@@ -26,13 +38,19 @@ export default class HeaderWithSearch extends React.Component {
 	updateSortFactor(e) {
 		this.setState({
 			sortBy: e.target.id,
-		})
+		});
+
+		this.props.dispatch(sortBy(e.target.id));
 	}
 
 	submit(e) {
-		// TODO
 		e.preventDefault();
-		console.log('Submit: ' + JSON.stringify(this.state));
+
+		this.props.dispatch(filterQuestions(
+			this.state.searchText.toLowerCase(),
+			this.state.searchIn,
+			this.state.sortBy,
+		))
 	}
 
 	render() {
