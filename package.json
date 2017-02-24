@@ -35,9 +35,15 @@
     "gulp-cssnano": "^2.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
     "react-router": "^3.0.2",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.8.1",
+    "redux-promise-middleware": "^4.2.0",
+    "redux-thunk": "^2.2.0",
     "webpack": "^2.2.1"
   },
   "dependencies": {
