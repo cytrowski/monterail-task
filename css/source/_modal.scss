@@ -103,6 +103,14 @@
 	height: 20px;
 	vertical-align: top;
 	width: 50px;
+
+	&[data-level="1"] {
+		background-position-x: -58px; 
+	}
+
+	&[data-level="2"] {
+		background-position-x: -42px;
+	}
 }
 
 // Horizontal line
