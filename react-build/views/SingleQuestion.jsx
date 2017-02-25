@@ -6,6 +6,7 @@ import Header from '../components/Header.jsx';
 import MainQuestion from '../components/MainQuestion.jsx';
 import Answer from '../components/Answer.jsx';
 import AnswersWrapper from '../components/AnswersWrapper.jsx';
+import StatItem from '../components/subcomponents/StatItem.jsx';
 
 export default class SingleQuestion extends React.Component {
 	constructor() {
@@ -69,10 +70,9 @@ export default class SingleQuestion extends React.Component {
 				<Main>
 					<MainQuestion data={question} />
 
-					<div className="stat stat__item answers-header">
-						<span className="stat--counter">{question.stats.peers}</span>
-						<span className="stat--text">peers already answered Adam</span>
-					</div>
+					<StatItem className="answers-header"
+						counter={question.stats.peers}
+						textAfter={"peers already answered " + question.author.name} />
 
 					{answers}
 				</Main>

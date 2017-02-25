@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { showProfile } from '../redux/actions/layout';
 
 import Photo from './subcomponents/Photo.jsx';
+import Action from './subcomponents/Action.jsx';
+import Voting from './subcomponents/Voting.jsx';
 
 @connect(store => {
 	return {};
@@ -62,35 +64,36 @@ export default class Answer extends React.Component {
 				<div className={'answer ' + classes}>
 				   <div className="answer--photo">
 						<Photo filename={data.author.photo} profileId={data.author.id} />
-				      <div className="action answer--action answer--action__mobile">
-							<span className="action--name"
-								onClick={this.showProfile.bind(this, data.author.id)}>{data.author.name}</span>
-							<span className="action--type">commented it</span>
-							<span className="action--time">{data.when}</span>
-						</div>
+
+					  <Action
+							className="answer--action answer--action__mobile"
+							onClick={this.showProfile.bind(this, data.author.id)}
+							name={data.author.name}
+							type="commented it"
+							when={data.when} />
 				   </div>
-				   <div className="answer--body">
-				      <div className="action answer--action">
-							<a className="action--name"
-								onClick={this.showProfile.bind(this, data.author.id)}>{data.author.name}</a>
-							<span className="action--type">commented it</span>
-							<span className="action--time">{data.when}</span>
-						</div>
-				      <div className="answer--content">
+
+					<div className="answer--body">
+						<Action
+							className="answer--action"
+							onClick={this.showProfile.bind(this, data.author.id)}
+							name={data.author.name}
+							type="commented it"
+							when={data.when} />
+
+					   <div className="answer--content">
 				         <p className="content">{data.content}</p>
 				      </div>
 				   </div>
+
 				   <div className="answer--voting">
-				      <div className="stat stat__item">
-							<span className="stat--counter">{data.votes+ this.state.vote}</span>
-							<span className="stat--text">upvotes</span>
-							<span className="stat--controls">
-								<button className="btn btn__upvote" onClick={this.upvote.bind(this)}></button>
-								<button className="btn btn__downvote" onClick={this.downvote.bind(this)}></button>
-							</span>
-						</div>
+						<Voting
+							votes={data.votes+ this.state.vote}
+							onUpvote={this.upvote.bind(this)}
+							onDownvote={this.downvote.bind(this)} />
 				   </div>
 				</div>
+
 				{ this.props.isLast &&
 					<div class="item--button">
 						<button class="btn btn__answer">{ buttonText }</button>

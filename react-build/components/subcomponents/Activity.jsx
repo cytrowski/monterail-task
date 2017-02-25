@@ -16,6 +16,7 @@ export default class Activity extends React.Component {
 				<div className="photo-box">
 					<Photo filename={data.author.photo} profileId={data.author.id} />
 				</div>
+
 				<div className={'item--activity--name' + classSufix}>
 					{data.action}
 				</div>

@@ -11,6 +11,7 @@ export default class UserCard extends React.Component {
 			   <div className="card--photo">
 					<Photo filename={data.photo} profileId={data.id} />
 			   </div>
+
 			   <span className="card--name" onClick={this.props.onClick}>{data.name}</span>
 			</div>
 		);

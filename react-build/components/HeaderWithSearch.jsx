@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 
 import { filterQuestions, resetSearchFilters, sortBy } from '../redux/actions/search';
 
+import HeaderNav from './subcomponents/HeaderNav.jsx';
+import CircleRadio from './subcomponents/CircleRadio.jsx';
+import LinkRadio from './subcomponents/LinkRadio.jsx';
+
 @connect(store => {
 	return {
 		search: store.search,
@@ -57,34 +61,27 @@ export default class HeaderWithSearch extends React.Component {
 		return (
 			<header>
 			   <div className="header-row header-row__top">
-			      <div className="header--nav">
-			         <h1 className="header--title">Questions</h1>
-			         <button className="btn btn__add"></button>
-			      </div>
+			      <HeaderNav hasGoBackLink={false} />
 
 				   <div className="header--form-fields">
 			         <div className="header--category">
-			            <input type="radio" id="shelf" name="category"
-								defaultChecked={false} onChange={this.updateSearchCategory.bind(this)} />
-			            <label className="radio radio__circle" for="shelf">
-								<span>My shelf</span>
-							</label>
-			            <input type="radio" id="all" name="category"
-								defaultChecked={true} onChange={this.updateSearchCategory.bind(this)} />
-			            <label className="radio radio__circle" for="all">
-								<span>All questions</span>
-							</label>
+			            <CircleRadio id="shelf" name="category" defaultChecked={false}
+								onChange={this.updateSearchCategory.bind(this)} text="My shelf" />
+
+							<CircleRadio id="all" name="category" defaultChecked={true}
+								onChange={this.updateSearchCategory.bind(this)} text="All questions" />
 			         </div>
 
 					   <div className="header--sorting">
 							<span className="sorting-text">Sort by:</span>
-			            <input type="radio" id="recent" name="sort-by"
-								defaultChecked={true} onChange={this.updateSortFactor.bind(this)} />
-			            <label className="radio radio__link" for="recent">recent</label>
+
+							<LinkRadio id="recent" name="sort-by" defaultChecked={true}
+								onChange={this.updateSortFactor.bind(this)} text="recent" />
+
 							<span className="sorting-text">or</span>
-			            <input type="radio" id="hot" name="sort-by"
-								defaultChecked={false} onChange={this.updateSortFactor.bind(this)} />
-			            <label className="radio radio__link" for="hot">hot</label>
+
+							<LinkRadio id="hot" name="sort-by" defaultChecked={false}
+								onChange={this.updateSortFactor.bind(this)} text="hot" />
 			         </div>
 			      </div>
 			   </div>

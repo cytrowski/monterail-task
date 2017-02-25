@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 import { showProfile } from '../redux/actions/layout';
 
 import Photo from './subcomponents/Photo.jsx';
+import Action from './subcomponents/Action.jsx';
 import Activity from './subcomponents/Activity.jsx';
+import StatItem from './subcomponents/StatItem.jsx';
 
 @connect(store => {
 	return {}
@@ -29,39 +31,39 @@ export default class Question extends React.Component {
 			      <div className="item--header--photo">
 						<Photo filename={data.author.photo} profileId={data.author.id} />
 					</div>
-			      <div className="item--header--text">
-			         <div className="action">
-							<span className="action--name"
-								onClick={this.showProfile.bind(this, data.author.id)}>{data.author.name}</span>
-							<span className="action--type">{data.action.description}</span>
-						</div>
+
+					<div className="item--header--text">
+						<Action name={data.author.name}
+							onClick={this.showProfile.bind(this, data.author.id)}
+							type={data.action.description} />
+
 						<Link className="title" to={'/' + data.slug}>{data.title}</Link>
 					</div>
 			   </div>
-			   <div className="item--main">
+
+				<div className="item--main">
 			      <div className="item--body">
 			         <div className="item--activity__main">
 			            <div className="item--activity--name">{data.action.type}</div>
 			         </div>
-			         <div className="item--activities-summary">
+
+						<div className="item--activities-summary">
 			            <div className="item--activities-counter">{data.moreActivities}</div>
 			            <div className="item--activities-summary--more">more<br />activities</div>
 			         </div>
-			         { activities }
+
+						{ activities }
 			      </div>
-			      <div className="item--stats">
-			         <div className="stat stat__item">
-							<span className="stat--counter">{data.stats.discussions}</span>
-							<span className="stat--text">related discussions</span>
-						</div>
-			         <div className="stat stat__item">
-							<span className="stat--counter">{data.stats.peers}</span>
-							<span className="stat--text">peers involved</span>
-						</div>
-			         <div className="stat stat__item">
-							<span className="stat--counter">{data.stats.conversations}</span>
-							<span className="stat--text">conversations</span>
-						</div>
+
+					<div className="item--stats">
+						<StatItem counter={data.stats.discussions}
+							textAfter="related discussions" />
+
+						<StatItem counter={data.stats.peers}
+							textAfter="peers involved" />
+
+						<StatItem counter={data.stats.conversations}
+							textAfter="conversations" />
 			      </div>
 			   </div>
 			</div>

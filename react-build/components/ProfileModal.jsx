@@ -6,6 +6,11 @@ import { showProfile, hideProfile } from '../redux/actions/layout';
 import ModalHeader from './subcomponents/ModalHeader.jsx';
 import UserCard from './subcomponents/UserCard.jsx';
 import Photo from './subcomponents/Photo.jsx';
+import Action from './subcomponents/Action.jsx';
+import Stat from './subcomponents/Stat.jsx';
+import StatItem from './subcomponents/StatItem.jsx';
+import SquareStat from './subcomponents/SquareStat.jsx';
+import SquareStatsRow from './subcomponents/SquareStatsRow.jsx';
 
 @connect(store => {
 	return {
@@ -50,20 +55,11 @@ export default class ProfileModal extends React.Component {
 				      </div>
 
 					   <ul className="stats-list stats-list__profile">
-				         <li className="stat">
-								<span className="stat--label">Member for</span>
-								<span className="stat--value">{profile.memberFor}</span>
-							</li>
-				         <li className="stat">
-								<span className="stat--label">Last seen</span>
-								<span className="stat--value">{profile.lastSeen}</span>
-							</li>
-				         <li className="stat">
-								<span className="stat--label">Activity level</span>
-								<span className="stat--value">
-									<i className="badge" data-level={profile.activityLevel}></i>
-								</span>
-							</li>
+							<Stat text="Member for" value={profile.memberFor} />
+
+							<Stat text="Last seen" value={profile.lastSeen} />
+
+							<Stat text="Activity level" value={profile.activityLevel} hasBadge={true} />
 				      </ul>
 
 					   <hr className="hline" />
@@ -78,26 +74,22 @@ export default class ProfileModal extends React.Component {
 
 					   <div className="square-stats-wrapper">
 				         <ul className="square-stats">
-				            <li className="square-stats--row">
-									<span className="square-stat square-stat__1st">
-										<span className="stat--counter square-stat--value">{profile.stats.peers}</span>
-										<span className="stat--text">peers</span>
-									</span>
-									<span className="square-stat square-stat__2nd">
-										<span className="stat--counter square-stat--value">{profile.stats.discussions}</span>
-				               	<span className="stat--text">discussions</span>
-									</span>
-				            </li>
-				            <li className="square-stats--row">
-									<span className="square-stat square-stat__3rd">
-										<span className="stat--counter square-stat--value">{profile.stats.findings}</span>
-										<span className="stat--text">findings</span>
-									</span>
-									<span className="square-stat square-stat__4th">
-										<span className="stat--counter square-stat--value">{profile.stats.questions}</span>
-				               	<span className="stat--text">questions</span>
-									</span>
-				            </li>
+				            <SquareStatsRow>
+									<SquareStat order="1st"
+										counter={profile.stats.peers} text="peers" />
+
+									<SquareStat order="2nd"
+										counter={profile.stats.discussions} text="discussions" />
+								</SquareStatsRow>
+
+
+								<SquareStatsRow>
+									<SquareStat order="3rd"
+										counter={profile.stats.findings} text="findings" />
+
+									<SquareStat order="4th"
+										counter={profile.stats.questions} text="questions" />
+								</SquareStatsRow>
 				         </ul>
 				      </div>
 
@@ -113,29 +105,19 @@ export default class ProfileModal extends React.Component {
 				   <div className="modal--hottest-discussion">
 				      <div className="modal-wrapper">
 							<Photo filename="sarah.jpg" profileId="4" />
-				         <div className="action">
-								<a className="action--name">Sarah</a>
-								<span className="action--type">found The Guardian article</span>
-							</div>
+
+							<Action name="Sarah" type="found the Guardian article" />
+
 							<span className="title">Cras in purus eu magna vulputate</span>
 
 						   <ul className="stats-list stats-list__hottest">
-				            <li className="stat stat__item">
-									<span className="stat--counter">4</span>
-									<span className="stat--text">peers involved</span>
-								</li>
-				            <li className="stat stat__item">
-									<span className="stat--counter">36</span>
-									<span className="stat--text">related discussions</span>
-								</li>
-				            <li className="stat stat__item">
-									<span className="stat--counter">18</span>
-									<span className="stat--text">conversations</span>
-								</li>
-				            <li className="stat stat__item">
-									<span className="stat--counter">90</span>
-									<span className="stat--text">upvotes</span>
-								</li>
+								<StatItem tag="li" counter="4" textAfter="peers involved" />
+
+								<StatItem tag="li" counter="36" textAfter="related discussions" />
+
+								<StatItem tag="li" counter="18" textAfter="conversations" />
+
+								<StatItem tag="li" counter="90" textAfter="upvotes" />
 				         </ul>
 				      </div>
 				   </div>
