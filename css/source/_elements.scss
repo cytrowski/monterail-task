@@ -609,6 +609,11 @@ a:not(:hover) {
 
 .item--action--link {
 	@extend .user--name;
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
 }
 
 .item--voting {
