@@ -19,11 +19,18 @@ import SquareStatsRow from './subcomponents/SquareStatsRow.jsx';
 	};
 })
 export default class ProfileModal extends React.Component {
+	constructor() {
+		super();
+
+		this.topPosition = null;
+	}
+
 	showProfile(profileId) {
 		this.props.dispatch(showProfile(profileId));
 	}
 
 	closeModal() {
+		this.topPosition = null;
 		this.props.dispatch(hideProfile());
 	}
 
@@ -42,10 +49,14 @@ export default class ProfileModal extends React.Component {
 				onClick={this.showProfile.bind(this, user.id)} />);
 		});
 
+		if (this.topPosition === null) {
+			this.topPosition = window.scrollY;
+		}
+
 		return (
 			<div>
 				<div className="layer" onClick={this.closeModal.bind(this)}></div>
-				<div className="modal" style={{top:window.scrollY}}>
+				<div className="modal" style={{top: this.topPosition}}>
 					<span className="close bounce" onClick={this.closeModal.bind(this)}></span>
 
 				   <div className="modal-wrapper">
