@@ -2,11 +2,19 @@
 @import '_mixins';
 
 @import '_skeleton';
+
 @import '_header';
+@import '_modal';
 
 @import '_inputs';
 @import '_buttons';
 
-@import '_modal';
+@import '_stats';
+@import '_square-stats';
+@import '_photos';
+@import '_card';
+@import '_question';
+@import '_answer';
+@import '_action';
 
-@import '_elements';
+@import '_other';

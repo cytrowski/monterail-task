@@ -1,0 +1,72 @@
+.square-stats {
+	@include flex();
+	@include not-list();
+	@extend .stats-list;
+
+	@include media-below(560px) {
+		display: block;
+	}
+}
+
+.square-stats-wrapper {
+	margin: 50px auto;
+	max-width: 100%;
+
+	@include media-above(560px) {
+		width: 500px;
+	}
+
+	@include media-below(560px) {
+		width: 250px;
+	}
+}
+
+.square-stats--row {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-around;
+
+	@include media-above(560px) {
+		width: 50%;
+	}
+
+	@include media-below(560px) {
+		width: 100%;
+
+		&:nth-of-type(2) {
+			margin-top: 20px;
+		}
+	}
+}
+
+.square-stat {
+	display: inline-block;
+	height: 80px;
+	line-height: 40px;
+	position: relative;
+	text-align: center;
+	width: 80px;
+
+	&:before {
+		background-color: #e5f5fd;
+		content: "";
+		display: inline-block;
+		left: -10px;
+		position: absolute;
+		height: 100px;
+		top: -10px;
+		width: 100px;
+		z-index: -1;
+	}
+
+	&__1st:before { transform: rotate(-40deg) }
+	&__2nd:before { transform: rotate(-15deg) }
+	&__3rd:before { transform: rotate(-35deg) }
+	&__4th:before { transform: rotate(10deg) }
+}
+
+.square-stat--value {
+	display: block;
+	font-size: 2.4rem !important;
+}

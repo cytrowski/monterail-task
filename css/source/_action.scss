@@ -1,0 +1,44 @@
+.action {
+	margin-bottom: 5px;
+}
+
+.action-link {
+	color: #0266b9;
+	font-family: $font-family--bold;
+	font-size: 1.6rem;
+	line-height: 1;
+
+	&__big {
+		font-size: 2.2rem;
+	}
+}
+
+.action--name {
+	@include profile-name();
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
+
+.action--time{
+	color: inherit;
+	font-family: $font-family--italic;
+	font-size: 1.6rem;
+	position: relative;
+	z-index: 2;
+
+	&:before {
+		content: "\00b7";
+		display: inline-block;
+		margin: 0 .8rem;
+	}
+}
+
+.action--type {
+	@include up-grey-text();
+
+	font-size: 1.1rem;
+	margin-left: .8rem;
+}

@@ -1,0 +1,18 @@
+// Photo
+.photo {
+	border-radius: 50%;
+	display: inline-block;
+	height: 50px;
+	vertical-align: middle;
+	width: 50px;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.photo-box {
+	display: inline-block;
+	padding: 20px;
+	vertical-align: top;
+}

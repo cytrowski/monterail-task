@@ -19,16 +19,10 @@ $font-family--bold: 'Agfa Rotis Bold', 'Arial', sans-serif;
 $font-family--italic: 'Agfa Rotis Italic', 'Arial', sans-serif;
 
 // Colors
-$background-color: #ffe1ad;
-$control-color: #0266b9;
-$control-color--disabled: #e5f5fd;
-$link-color: #0266b9;
-$stat-box-color: #e5f5fd;
-$hline-color: #c3c4c6;
-$text-color: #2d2c2e;
-$text-color--secondary: #babcbe;
-$border-color: #f4f4f4;
-$container-background: #29282a;
+$action-button-color: #0266b9;
 
-//
+// Sizes
+$voting-control-size: 5px;
+
+// Breakpoints
 $brkpt: 640px;

@@ -1,0 +1,52 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+a:not(:hover) {
+	text-decoration: none;
+}
+
+// Box
+.box {
+	box-shadow: 2px -2px 8px rgba(0,0,0,.1);
+}
+
+.center-box {
+	text-align: center;
+}
+
+// Load more
+.load-more {
+	background-color: #fff;
+	padding: 40px 20px;
+}
+
+.no-more-items {
+	@extend .btn__load;
+
+	color: #a7a9ac;
+}
+
+// Question and answer title
+.title {
+	color: #0266b9;
+	margin-top: 5px;
+	font-family: $font-family--italic;
+	font-size: 2.2rem;
+}
+
+.content {
+	color: #6b6d71;
+	font-family: 'Arial', sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	margin: 0;
+}
+
+// Start info box
+.app-loading {
+	font-family: $font-family--italic;
+	font-size: 1.6rem;
+	padding: 40px 10px;
+	text-align: center;
+}
