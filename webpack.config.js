@@ -3,7 +3,7 @@ const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
 	context: __dirname,
-	devtool: debug ? "inline-sourcemap" : null,
+	devtool: 'cheap-module-source-map',
 	entry: __dirname + "/react-build/index.jsx",
 	module: {
 		loaders: [
@@ -26,5 +26,10 @@ module.exports = {
 		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+		new webpack.DefinePlugin({
+			'process.env': {
+				'NODE_ENV': '"production"',
+			}
+		})
 	],
 };
