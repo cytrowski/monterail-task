@@ -85,8 +85,6 @@ class APIRouter {
 					for (let i = 0; i < data.questions.length; i++) {
 						let q = data.questions[i];
 
-						console.log(q.slug, slug);
-
 						if (q.slug == slug) {
 							res.send(q);
 							return;
