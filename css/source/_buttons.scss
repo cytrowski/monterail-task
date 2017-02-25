@@ -9,7 +9,7 @@
 .bounce,
 .btn {
 	display: inline-block;
-	
+
 	&:active {
 		transform: translateY(-1px);
 	}
@@ -54,7 +54,7 @@
 .btn__nav {
 	@include sprite(0px, 0px);
 
-	background-color: $control-color;
+	background-color: $action-button-color;
 	border: none;
 	border-radius: 50%;
 	display: inline-block;
@@ -97,12 +97,12 @@
 }
 
 .btn__upvote {
-	border-width: 0 5px 10px 5px;
-	border-color: transparent transparent #0266B9 transparent;
+	border-width: 0 $voting-control-size (2*$voting-control-size) $voting-control-size;
+	border-color: transparent transparent $action-button-color transparent;
 	margin-bottom: 10px;
 }
 
 .btn__downvote {
-	border-width: 10px 5px 0 5px;
-	border-color: #0266B9 transparent transparent transparent;
+	border-width: (2*$voting-control-size) $voting-control-size 0 $voting-control-size;
+	border-color: $action-button-color transparent transparent transparent;
 }
