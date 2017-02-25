@@ -1,0 +1,128 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"name": "John",
+			"photo": "john.jpg",
+			"memberFor": "7 weeks",
+			"lastSeen": "2 hours",
+			"activityLevel": 2,
+			"stats": {
+				"peers": 3,
+				"discussions": 11,
+				"findings": 4,
+				"questions": 2
+			},
+			"whoJoined": [
+				{
+					"id": 2,
+					"name": "Bob",
+					"photo": "bob.jpg"
+				},
+				{
+					"id": 3,
+					"name": "Andrea",
+					"photo": "andrea.jpg"
+				},
+				{
+					"id": 4,
+					"name": "Sarah",
+					"photo": "sarah.jpg"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "Bob",
+			"photo": "bob.jpg",
+			"memberFor": "1 month",
+			"lastSeen": "12 minutes",
+			"activityLevel": 3,
+			"stats": {
+				"peers": 5,
+				"discussions": 20,
+				"findings": 5,
+				"questions": 17
+			},
+			"whoJoined": [
+				{
+					"id": 1,
+					"name": "John",
+					"photo": "john.jpg"
+				},
+				{
+					"id": 3,
+					"name": "Andrea",
+					"photo": "andrea.jpg"
+				},
+				{
+					"id": 4,
+					"name": "Sarah",
+					"photo": "sarah.jpg"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Andrea",
+			"photo": "andrea.jpg",
+			"memberFor": "11 months",
+			"lastSeen": "1 hour",
+			"activityLevel": 2,
+			"stats": {
+				"peers": 14,
+				"discussions": 30,
+				"findings": 34,
+				"questions": 8
+			},
+			"whoJoined": [
+				{
+					"id": 1,
+					"name": "John",
+					"photo": "john.jpg"
+				},
+				{
+					"id": 2,
+					"name": "Bob",
+					"photo": "bob.jpg"
+				},
+				{
+					"id": 4,
+					"name": "Sarah",
+					"photo": "sarah.jpg"
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "Sarah",
+			"photo": "sarah.jpg",
+			"memberFor": "4 months",
+			"lastSeen": "yesterday",
+			"activityLevel": 1,
+			"stats": {
+				"peers": 1,
+				"discussions": 2,
+				"findings": 0,
+				"questions": 5
+			},
+			"whoJoined": [
+				{
+					"id": 1,
+					"name": "John",
+					"photo": "john.jpg"
+				},
+				{
+					"id": 2,
+					"name": "Bob",
+					"photo": "bob.jpg"
+				},
+				{
+					"id": 3,
+					"name": "Andrea",
+					"photo": "andrea.jpg"
+				}
+			]
+		}
+	]
+}
