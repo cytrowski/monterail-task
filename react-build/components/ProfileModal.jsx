@@ -106,7 +106,8 @@ export default class ProfileModal extends React.Component {
 				      <div className="modal-wrapper">
 							<Photo filename="sarah.jpg" profileId="4" />
 
-							<Action name="Sarah" type="found the Guardian article" />
+							<Action name="Sarah" onClick={this.showProfile.bind(this, 4)}
+								type="found the Guardian article" />
 
 							<span className="title">Cras in purus eu magna vulputate</span>
 
