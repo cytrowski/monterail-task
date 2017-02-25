@@ -141,33 +141,9 @@
 .item--activity {
 	background-color: #eee;
 
-	// @include media-below(800px) {
-	// 	&:nth-of-type(6) {
-	// 		display: none;
-	// 	}
-	// }
-	//
-	// @include media-below(700px) {
-	// 	&:nth-of-type(5) {
-	// 		display: none;
-	// 	}
-	// }
-	//
 	@include media-below(600px) {
 		margin-left: 1px;
 	}
-	//
-	// @include media-below(470px) {
-	// 	&:nth-of-type(4) {
-	// 		display: none;
-	// 	}
-	// }
-	//
-	// @include media-below(380px) {
-	// 	&:nth-of-type(3) {
-	// 		display: none;
-	// 	}
-	// }
 }
 
 .item--activities-summary {
@@ -226,7 +202,7 @@
 }
 
 .item--activities-counter {
-	@extend .counter--value;
+	@include counter-style();
 
 	height: 90px;
 	line-height: 90px;
@@ -306,7 +282,7 @@
 }
 
 .item--action--link {
-	@extend .user--name;
+	@include profile-name();
 
 	&:hover {
 		cursor: pointer;

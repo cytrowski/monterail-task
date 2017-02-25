@@ -32,6 +32,35 @@
 	}
 }
 
+.modal-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 620px;
+	padding: 0 10px;
+}
+
+.modal--header {
+	@include up-grey-text();
+
+	font-weight: normal;
+	margin: 50px 0 20px 0;
+	text-align: center;
+}
+
+// Modal hottest discussion (bottom, static box)
+.modal--hottest-discussion {
+	@include pattern-box();
+
+	margin-top: 40px;
+	padding: 15px 0;
+	text-align: center;
+
+	.photo {
+		margin-top: - (15px + 25px);
+		margin-bottom: 10px;
+	}
+}
+
 .close {
 	@include sprite(-68px, -26px);
 
@@ -44,9 +73,46 @@
 	width: 16px;
 }
 
-.modal-wrapper {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 620px;
-	padding: 0 10px;
+.photo__big {
+	@extend .photo;
+
+	height: 85px;
+	width: 85px;
+}
+
+.profile-name {
+	@include profile-name;
+
+	font-size: 2.4rem;
+	margin-top: 10px;
+}
+
+.big-title {
+	color: inherit;
+	font-family: $font-family--italic;
+	font-size: 2.8rem;
+	font-weight: normal;
+	margin: 0;
+}
+
+// Activity badge
+.badge {
+	@include sprite(-26px, 0);
+
+	display: inline-block;
+	height: 20px;
+	vertical-align: top;
+	width: 50px;
+}
+
+// Horizontal line
+.hline {
+	border: solid #a9acae;
+	border-width: 0 0 1px 0;
+	margin: 20px 0;
+}
+
+.modal--nav {
+	@include flex();
+	@include not-list();
 }

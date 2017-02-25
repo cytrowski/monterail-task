@@ -1,4 +1,6 @@
 .square-stats {
+	@include flex();
+	@include not-list();
 	@extend .stats-list;
 
 	@include media-below(560px) {
@@ -66,5 +68,5 @@
 
 .square-stat--value {
 	display: block;
-	font-size: 2.4rem;
+	font-size: 2.4rem !important;
 }

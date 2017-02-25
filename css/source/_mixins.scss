@@ -15,11 +15,58 @@
 	width: 800px;
 }
 
+@mixin up-grey-text() {
+	color: grey;
+	font-family: $font-family;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+@mixin profile-name() {
+	color: #0266b9;
+	font-family: $font-family--bold;
+	font-size: 1.6rem;
+	line-height: 1;
+
+	&__big {
+		font-size: 2.2rem;
+	}
+}
+
+@mixin counter-style() {
+	color: inherit;
+	font-family: $font-family--bold;
+	font-size: 1.6rem;
+	position: relative;
+	z-index: 2;
+}
+
+@mixin label-style() {
+	color: inherit;
+	font-family: $font-family--italic;
+	font-size: 1.6rem;
+	position: relative;
+	z-index: 2;
+}
+
 // Display as flex
 @mixin flex() {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
+	justify-content: space-between;
+}
+
+// <ul /> without list styles
+@mixin not-list() {
+	list-style: none;
+	padding-left: 0;
+}
+
+// Box with stripes
+@mixin pattern-box() {
+	background-image: url('/images/pattern.png');
 }
 
 // Search input and button common styles
