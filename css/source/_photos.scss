@@ -9,6 +9,11 @@
 	&:hover {
 		cursor: pointer;
 	}
+
+	&__big {
+		height: 85px;
+		width: 85px;
+	}
 }
 
 .photo-box {
