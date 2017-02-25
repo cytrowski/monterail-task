@@ -831,3 +831,11 @@ a:not(:hover) {
 	line-height: 1.5;
 	margin: 0;
 }
+
+// App loading text
+.app-loading {
+	font-family: $font-family--italic;
+	font-size: 1.6rem;
+	padding: 40px 10px;
+	text-align: center;
+}
